@@ -30,11 +30,21 @@
                         <th>ID</th>
                         <th>Tasks</th>
                         <th>completed</th>
+                        <th>Action</th>
                         @foreach($tasks as $task)
                         <tr>
                             <td>{{$task->id}}</td>
                             <td>{{$task->task}}</td>
-                            <td>{{$task->iscompleted}}</td>
+                            <td>
+                                @if($task->iscompleted)
+                                <button class="btn btn-success">Completed</button>
+                                @else 
+                                <button class="btn btn-warning">Not Completed</button>
+                                @endif
+                             </td>
+                             <td>
+                                 <a href="/markascompleted/{{$task->id}}" class="btn btn-primary" >Mark as completed</a>
+                             </td>
                         </tr>
                         @endforeach
                     </table>
