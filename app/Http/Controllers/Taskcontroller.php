@@ -31,4 +31,12 @@ class Taskcontroller extends Controller
         return redirect()->back();
     }
 
+    public function updatetasnotkascompleted($id){
+        $task=Task::find($id);
+        $task->iscompleted=0;
+        $task->save();
+        return redirect()->back();
+
+    }
+
 }
