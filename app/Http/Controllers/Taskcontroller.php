@@ -18,7 +18,8 @@ class Taskcontroller extends Controller
             $task->task=$request->task;
             $task->save();
 
-            
+            $data=Task::all();
+            dd($data);
 
     }
 }
