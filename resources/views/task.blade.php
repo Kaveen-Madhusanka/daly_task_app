@@ -30,13 +30,13 @@
                         <th>ID</th>
                         <th>Tasks</th>
                         <th>completed</th>
-
+                        @foreach($tasks as $task)
                         <tr>
-                            <td>1</td>
-                            <td>i have to learn angular today</td>
-                            <td>Not yet</td>
+                            <td>{{$task->id}}</td>
+                            <td>{{$task->task}}</td>
+                            <td>{{$task->iscompleted}}</td>
                         </tr>
-
+                        @endforeach
                     </table>
                 </div>
 
