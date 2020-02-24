@@ -11,8 +11,14 @@ class Taskcontroller extends Controller
             //dd($request->all());
 
             $task = new Task;
+
+            $this->validate($request,[
+                'task'=>'required|max:100|min:5',
+            ]);
             $task->task=$request->task;
             $task->save();
+
+            
 
     }
 }
